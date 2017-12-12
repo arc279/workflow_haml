@@ -1,0 +1,36 @@
+%root
+  %env{ hoge: 123, foo: 234}
+  %shell
+    echo $hoge
+    echo $foo
+  %fork
+    -# %fork 直下は %group で包む
+    %group
+      %env{ hoge2: 345, foo2: 456}
+      %chdir /tmp
+      %shell
+        echo "shell!!!!!!!!!!!"
+        pwd
+        env
+        echo xpath: "$XPATH"
+        echo "--- $this_is_initial / $this_is_initial2 ---"
+        echo $hoge / $foo
+        echo $hoge2 / $foo2
+      -# カスタムタグ
+      %b{ attr1: "B1", attr2: "B2" }
+    %group
+      %eval
+        puts "eval!!!!!!!!!!!!!!!!!!!"
+        puts el.xpath
+        pp env
+        pp opts
+        pp ENV
+      %c{ attr1: "C1", attr2: "C2" }
+  %shell
+    env
+    echo xpath: "$XPATH"
+    echo $hoge / $foo
+    echo $hoge2 / $foo2
+    exit 2
+  %echo finish
+

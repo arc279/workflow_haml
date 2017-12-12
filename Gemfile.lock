@@ -1,0 +1,30 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    erubis (2.7.0)
+    haml (5.0.4)
+      temple (>= 0.8.0)
+      tilt
+    html2haml (2.2.0)
+      erubis (~> 2.7.0)
+      haml (>= 4.0, < 6)
+      nokogiri (>= 1.6.0)
+      ruby_parser (~> 3.5)
+    mini_portile2 (2.3.0)
+    nokogiri (1.8.1)
+      mini_portile2 (~> 2.3.0)
+    ruby_parser (3.10.1)
+      sexp_processor (~> 4.9)
+    sexp_processor (4.10.0)
+    temple (0.8.0)
+    tilt (2.0.8)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  haml
+  html2haml
+
+BUNDLED WITH
+   1.15.4
